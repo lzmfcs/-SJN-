@@ -1,5 +1,5 @@
 (function () {
-  const pluginId = 'dxxrq';
+  const pluginId = '-SJN-';
 
   // 作者声明
   alert(
