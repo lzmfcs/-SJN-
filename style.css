@@ -1,97 +1,130 @@
+/* 插件面板根元素 */
 #dxxrq {
   position: fixed;
-  top: 70px;
-  right: 20px;
-  width: 320px;
-  background: rgba(22, 24, 31, 0.85);
-  backdrop-filter: blur(var(--blur));
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius);
-  z-index: 999999;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  background: rgba(30, 30, 45, 0.85); /* 使用变量以便JS修改 */
+  border-radius: 16px; /* 使用变量 */
+  backdrop-filter: blur(12px); /* 使用变量 */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  z-index: 10000;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  transition: opacity 0.2s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-:root {
-  --layers: 4;
-  --blur: 12px;
-  --radius: 16px;
-}
-.tool-header {
+
+/* 顶部标题栏 */
+#dxxrq .tool-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  cursor: move;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: move; /* 方便拖动 */
+  user-select: none;
 }
-.tool-title {
-  font-weight: 600;
-  background: linear-gradient(90deg, #a8c0ff, #d4a5ff);
-  -webkit-background-clip: text;
-  color: transparent;
+
+#dxxrq .tool-title {
+  font-weight: bold;
 }
-.tool-controls button {
+
+#dxxrq .tool-controls button {
   background: none;
   border: none;
-  color: #fff;
+  color: #ccc;
   font-size: 16px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
   cursor: pointer;
-  padding: 0 6px;
+  transition: background 0.2s, color 0.2s;
 }
-.tool-body {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.group {
-  margin: 6px 0 4px;
-  font-size: 12px;
-  color: #a8c0ff;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.item label {
-  flex: 1;
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
-}
-.item input[type="range"] { flex: 2; }
-.item input[type="checkbox"] { transform: scale(1.2); }
-.item-row {
-  display: flex;
-  gap: 8px;
-}
-.item-row button {
-  flex: 1;
-  padding: 8px 6px;
-  border: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
+
+#dxxrq .tool-controls button:hover {
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
+  border-radius: 4px;
+}
+
+/* 主体内容区域 */
+#dxxrq .tool-body {
+  padding: 10px 15px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* 分组标题 */
+#dxxrq .group {
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0.7;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+#dxxrq .group:first-child {
+  margin-top: 0;
+}
+
+/* 设置项 */
+#dxxrq .item, .item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#dxxrq .item label {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+#dxxrq .item-row {
+    gap: 10px;
+}
+
+/* 滑块样式 */
+#dxxrq input[type="range"] {
+  width: 100%;
+  accent-color: #58a6ff;
+}
+
+/* 复选框样式 */
+#dxxrq input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #58a6ff;
+}
+
+#dxxrq .item span {
+  min-width: 40px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 按钮样式 */
+#dxxrq button {
+  flex-grow: 1;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 8px; /* 使用变量 */
   cursor: pointer;
+  transition: background-color 0.2s;
 }
-.item-row button:hover {
-  background: rgba(168, 192, 255, 0.3);
+#dxxrq button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
-.no-anim * {
-  animation: none !important;
-  transition: none !important;
-}
-.no-light * {
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-.no-bg-blur {
-  backdrop-filter: none !important;
-}
+
+/* 由JS控制的特效类 */
+body.no-anim * { transition: none !important; }
+body.no-light { text-shadow: none !important; box-shadow: none !important; }
+body.no-bg-blur #bg { filter: none !important; }
