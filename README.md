@@ -24,8 +24,7 @@ SillyTavern 前端渲染控制插件。Saros社区来了越来越多的新人宝
 - 一键重载界面
 
 ## 安装
-1. 下载解压，将文件夹命名为 `dxxrq`
-2. 放入：
-SillyTavern/public/scripts/extensions/
-3. 重启 SillyTavern
-4. 在插件页面启用
+1.  放入：
+SillyTavern/extensions/
+2. 重启 SillyTavern
+
