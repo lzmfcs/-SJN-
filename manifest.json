@@ -1,7 +1,7 @@
 {
-  "id": "dxxrq",
+  "id": "-SJN-",
   "name": "冬雪SJN渲染器",
-  "description": "SillyTavern 渲染控制插件",
+  "description": "SillyTavern 渲染控制插件，作者沈嘉南",
   "version": "1.0.0",
   "author": "沈嘉南",
   "main": "index.js"
