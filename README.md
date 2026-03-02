@@ -2,8 +2,9 @@
 作者：沈嘉南
 
 ## 介绍
-SillyTavern 前端渲染控制插件。Saros社区来了越来越多的新人宝宝，
-做了一个简洁的渲染器，
+SillyTavern 前端渲染插件。Saros社区来了越来越多的新人宝宝，
+做了一个非常简洁的渲染器以方便没有渲染助手
+的老师们！
 之后有问题请在dc找我。
 
 ## 重要声明
@@ -24,7 +25,7 @@ SillyTavern 前端渲染控制插件。Saros社区来了越来越多的新人宝
 - 一键重载界面
 
 ## 安装
-1.  放入：
-SillyTavern/extensions/
+1.  拓展界面安装：
+SillyTavern/extension
 2. 重启 SillyTavern
 
