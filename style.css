@@ -1,0 +1,106 @@
+/* === 冬雪渲染器样式 === */
+#dxxrq {
+  /* 已由 JS 内联设置，此处仅作兜底 */
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+#dxxrq .tool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: move;
+  user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#dxxrq .tool-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+#dxxrq .tool-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 18px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#dxxrq .tool-close:hover {
+  color: #fff;
+}
+
+#dxxrq .panel-content { margin-top: 12px; }
+
+#dxxrq .group {
+  font-size: 13px;
+  font-weight: bold;
+  color: #99aabb;
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#dxxrq .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+#dxxrq .item label {
+  flex-shrink: 0;
+  width: 90px;
+  font-size: 14px;
+}
+
+#dxxrq input[type="range"],
+#dxxrq input[type="checkbox"] {
+  accent-color: #58a6ff;
+}
+
+#dxxrq .item span {
+  min-width: 48px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+
+#dxxrq .item-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#dxxrq button {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#dxxrq button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* 全局特效类（由 JS 控制） */
+body.no-anim * {
+  transition: none !important;
+}
+body.no-light {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+body.no-bg-blur #bg {
+  filter: none !important;
+}
