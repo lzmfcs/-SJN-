@@ -1,0 +1,534 @@
+/* ===== 冬雪SJN渲染器 样式文件 ===== */
+
+/* 主面板样式 */
+#dxxrq {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: rgba(30, 30, 45, 0.98);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    padding: 16px;
+}
+
+/* 面板头部 */
+#dxxrq .tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: move;
+    user-select: none;
+}
+
+#dxxrq .tool-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #aaccff;
+    text-shadow: 0 0 10px rgba(170, 204, 255, 0.3);
+}
+
+#dxxrq .tool-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+#dxxrq .tool-close:hover {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+/* 分组标题 */
+#dxxrq .group {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 20px 0 12px 0;
+    color: #aaccff;
+    border-left: 3px solid #aaccff;
+    padding-left: 10px;
+}
+
+/* 选项项 */
+#dxxrq .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+#dxxrq .item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#dxxrq .item.highlight {
+    background: rgba(170, 204, 255, 0.15);
+    border: 1px solid rgba(170, 204, 255, 0.3);
+}
+
+#dxxrq .item label {
+    flex: 1;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#dxxrq .item .badge {
+    background: #aaccff;
+    color: #1a1a2a;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* 单选按钮组 */
+#dxxrq .radio-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+#dxxrq .radio-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+#dxxrq .radio-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#dxxrq .radio-item input[type="radio"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #aaccff;
+}
+
+/* 输入框样式 */
+#dxxrq .small-input {
+    width: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0 5px;
+    font-size: 13px;
+}
+
+#dxxrq .medium-input {
+    width: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+#dxxrq .custom-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* 按钮样式 */
+#dxxrq .small-btn {
+    background: #4a6fa5;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+#dxxrq .small-btn:hover {
+    background: #5f8bc9;
+    transform: translateY(-1px);
+}
+
+/* 快速操作按钮 */
+#dxxrq .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin: 12px 0;
+}
+
+#dxxrq .action-btn {
+    padding: 8px;
+    background: #3d3d4a;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+#dxxrq .action-btn:hover {
+    background: #4d4d5a;
+    transform: translateY(-1px);
+}
+
+/* 检测框 */
+#dxxrq .detect-box {
+    background: #1a1a2a;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#dxxrq .detect-box div {
+    margin-bottom: 6px;
+}
+
+#dxxrq .html-list {
+    max-height: 80px;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 11px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+#dxxrq .html-item {
+    color: #ffd700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 按钮行 */
+#dxxrq .item-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+#dxxrq .item-row button {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+#dxxrq .primary-btn {
+    background: #4a6fa5;
+    color: white;
+}
+
+#dxxrq .primary-btn:hover {
+    background: #5f8bc9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
+}
+
+#dxxrq .warning-btn {
+    background: #a54a4a;
+    color: white;
+}
+
+#dxxrq .warning-btn:hover {
+    background: #c95f5f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(165, 74, 74, 0.3);
+}
+
+#dxxrq .secondary-btn {
+    background: #3d3d4a;
+    color: white;
+}
+
+#dxxrq .secondary-btn:hover {
+    background: #4d4d5a;
+    transform: translateY(-1px);
+}
+
+/* 帮助框 */
+#dxxrq .help-box {
+    background: #1a1a2a;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#dxxrq .help-box p {
+    margin: 6px 0;
+    color: #ccc;
+}
+
+#dxxrq .help-box .tip {
+    color: #ffd700;
+    font-style: italic;
+}
+
+#dxxrq .help-box code {
+    display: block;
+    background: #2d2d3a;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    color: #ffd700;
+    white-space: pre-wrap;
+    font-size: 11px;
+    border-left: 3px solid #aaccff;
+}
+
+/* 语法框 */
+#dxxrq .syntax-box {
+    background: #1a1a2a;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+#dxxrq .syntax-item {
+    margin-bottom: 12px;
+}
+
+#dxxrq .syntax-tag {
+    color: #aaccff;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+#dxxrq .syntax-item code {
+    display: block;
+    background: #2d2d3a;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 12px;
+    color: #ffd700;
+    border-left: 3px solid #aaccff;
+}
+
+/* 输入范围滑块 */
+#dxxrq input[type="range"] {
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    -webkit-appearance: none;
+    margin: 0 10px;
+}
+
+#dxxrq input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #aaccff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(170, 204, 255, 0.5);
+}
+
+#dxxrq input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #bbddff;
+}
+
+/* 颜色选择器 */
+#dxxrq input[type="color"] {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+#dxxrq input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#dxxrq input[type="color"]::-webkit-color-swatch {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* 复选框 */
+#dxxrq input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #aaccff;
+    margin-right: 5px;
+}
+
+/* 数字显示 */
+#dxxrq .value-display {
+    min-width: 45px;
+    text-align: right;
+    color: #aaccff;
+    font-size: 13px;
+}
+
+/* 浮动按钮 */
+#dxxrq-launch-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #4a6fa5, #6b8fc9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+#dxxrq-launch-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #5f8bc9, #7b9fd9);
+    box-shadow: 0 6px 20px rgba(74, 111, 165, 0.5);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* ===== 渲染的HTML元素样式 ===== */
+
+/* 状态栏 */
+.rendered-status-bar {
+    background: linear-gradient(135deg, #2d2d3a, #3d3d4a);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 卡片 */
+.rendered-card {
+    background: #3d3d4a;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 按钮 */
+.rendered-btn {
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s;
+    margin: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rendered-btn:hover {
+    background: #5f8bc9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 111, 165, 0.4);
+}
+
+/* 调试信息 */
+.debug-info {
+    font-size: 10px;
+    color: #888;
+    margin-top: 2px;
+    font-family: monospace;
+}
+
+/* 滚动条美化 */
+#dxxrq::-webkit-scrollbar {
+    width: 6px;
+}
+
+#dxxrq::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+#dxxrq::-webkit-scrollbar-thumb {
+    background: rgba(170, 204, 255, 0.3);
+    border-radius: 10px;
+}
+
+#dxxrq::-webkit-scrollbar-thumb:hover {
+    background: rgba(170, 204, 255, 0.5);
+}
+
+/* 文本提示 */
+#dxxrq .note {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+    font-style: italic;
+}
