@@ -1,8 +1,10 @@
 {
-  "id": "-SJN-",
-  "name": "冬雪SJN渲染器",
-  "description": "SillyTavern 渲染控制插件，作者沈嘉南",
-  "version": "1.0.0",
-  "author": "沈嘉南",
-  "main": "index.js"
+    "display_name": "❄️ 冬雪SJN渲染器",
+    "loading_order": 10,
+    "js": "extension.js",
+    "author": "沈嘉南",
+    "version": "1.1.0",
+    "homePage": "https://github.com/lzmfcs/-SJN-",
+    "auto_update": true,
+    "minimum_client_version": "1.6.0"
 }
